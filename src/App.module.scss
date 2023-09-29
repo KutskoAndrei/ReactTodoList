@@ -1,0 +1,19 @@
+.AppContent{
+  display: grid;
+  grid-template-areas: "buttonPanel todoList";
+  grid-template-rows: 100%;
+  grid-template-columns: 25% 75%;
+  height: 100vh;
+  margin: 0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.controlPanel {
+  grid-area: buttonPanel;
+  border-right: solid gray;
+}
+
+.contentPanel {
+  grid-area: todoList;
+  background-color: #F0F0F0;
+}

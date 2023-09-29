@@ -1,0 +1,29 @@
+.regularButton {
+    display: flex;
+    border: solid #505050;
+    margin: 16px;
+    padding: 4px;
+    width: 12rem;
+    height: 3rem;
+    border-radius: 5%;
+    justify-content: center;
+    align-items: center;
+    color: #303030;
+    
+    &:hover {
+        border: solid #202020;
+        cursor: pointer;
+        color: #505050;
+        box-shadow: 2px 2px 2px #888888;
+        background-color: #F0F0F0;
+    }
+}
+
+.active {
+    background-color: gray;
+    color: whitesmoke;
+
+    &:hover {
+        background-color: gray; 
+    }
+}

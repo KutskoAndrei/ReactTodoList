@@ -1,0 +1,43 @@
+.todoItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E0E0E0;
+    border: double #C0C0C0;
+    border-radius: 5%;
+    margin-bottom: 8px;
+    padding: 10px;
+    color: #303030;
+    height: 2rem;
+
+    &:hover {
+        border: solid #C0C0C0;
+        background-color: #E8E8E8;
+    }
+
+    .checkedTodo {
+        display: flex;
+        text-decoration: line-through;
+    }
+
+    .uncheckedTodo {
+        display: flex;
+    }
+
+    .removeBtn {
+        display: none;
+        border: none;
+        background: none;
+        margin-right: 24px;
+    }
+
+    &:hover .removeBtn {
+        display: block;
+        cursor: pointer;
+    }
+
+    h3 {
+        margin-left: 20px;
+    }
+}
