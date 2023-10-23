@@ -1,5 +1,5 @@
-import { FilterType } from "../models/FilterType";
-import { ITodoItem } from "../models/ITodoItem";
+import FilterType from "../models/FilterType";
+import ITodoItem from "../models/ITodoItem";
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const todos: ITodoItem[] = [];

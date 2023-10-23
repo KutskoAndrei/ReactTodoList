@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ITodoItem } from '../../models/ITodoItem';
+import ITodoItem from '../../models/ITodoItem';
 import classes from './TodoItem.module.scss';
 import Checkbox from '../UI/Chexkbox/Checkbox';
 import { useTodos } from '../../hooks/useTodos';
@@ -15,12 +15,12 @@ const TodoItem: FC<TodoItemProps> = ({ todoItem }) => {
     return (
         <div className={classes.todoItem}>
             <div className={todoItem.checked ? classes.checkedTodo : classes.uncheckedTodo}>
-                <Checkbox isActive={todoItem.checked} switchCheckboxHandler={() => switchStatus(todoItem)} />
+                <Checkbox isActive={todoItem.checked} switchCheckboxHandler={() => switchStatus(todoItem)} dataTestId='checkBoxContainer' />
                 <h3>{todoItem.description}</h3>
             </div>
-            <div className={classes.removeBtn} onClick={() => remove(todoItem)}>
+            <button className={classes.removeBtn} onClick={() => remove(todoItem)}>
                 <AiOutlineClose size={30} />
-            </div>
+            </button>
         </div>
 
     );

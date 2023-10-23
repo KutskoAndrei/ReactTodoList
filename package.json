@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -47,7 +48,12 @@
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
-    "cypress": "^13.2.0",
+    "cypress": "^13.3.0",
+    "eslint": "^8.51.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "framer-motion": "^10.16.4",
     "react-transition-group": "^4.4.5",
     "sass": "^1.67.0"
   }

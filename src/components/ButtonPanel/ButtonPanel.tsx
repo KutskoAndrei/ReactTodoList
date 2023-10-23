@@ -2,7 +2,7 @@ import { useTodos } from "../../hooks/useTodos";
 import { useState, useEffect } from "react";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { updateFilter } from "../../store/todoSlice";
-import { FilterType } from "../../models/FilterType";
+import FilterType from "../../models/FilterType";
 import classes from './ButtonPanel.module.scss';
 import RegularButton from "../UI/RegularButton/RegularButton";
 import ScoreLabel from "../ScoreLabel/ScoreLabel";

@@ -1,4 +1,4 @@
-import { ITodoItem } from '../../models/ITodoItem';
+import ITodoItem from '../../models/ITodoItem';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import classes from './TodoLilst.module.scss';
 import TodoItem from '../TodoItem/TodoItem';
@@ -17,11 +17,13 @@ const TodoList = () => {
     }, []);
 
     return (
-        <div className={classes.todoList}>
+        <ul className={classes.todoList} data-testid="todoList">
             {todos && todos.map((todo: ITodoItem) =>
-                <TodoItem key={todo.id} todoItem={todo} />
+                <li>
+                    <TodoItem key={todo.id} todoItem={todo} />
+                </li>
             )}
-        </div>
+        </ul>
     )
 }
 

@@ -1,4 +1,4 @@
-import { ITodoItem } from "../models/ITodoItem";
+import ITodoItem from "../models/ITodoItem";
 
 export function useTodoRepository() {
     const key = 'todoList';

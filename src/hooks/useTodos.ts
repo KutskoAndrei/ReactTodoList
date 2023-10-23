@@ -1,5 +1,5 @@
-import { FilterType } from "../models/FilterType";
-import { ITodoItem } from "../models/ITodoItem";
+import FilterType from "../models/FilterType";
+import ITodoItem from "../models/ITodoItem";
 import { removeTodo, updateTodos } from "../store/todoSlice";
 import { useAppDispatch } from "./useAppDispatch";
 import { useAppSelector } from "./useAppSelector";

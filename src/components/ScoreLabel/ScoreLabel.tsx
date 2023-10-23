@@ -5,7 +5,7 @@ interface IScoreLabelProps {
     score: number;
 }
 
-const ScoreLabel: FC<IScoreLabelProps> = ({score}) => {
+const ScoreLabel: FC<IScoreLabelProps> = ({ score }) => {
   return (
     <div className={classes.scoreLabel}>
         <h1>{score}</h1>
