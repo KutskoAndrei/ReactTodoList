@@ -7,12 +7,17 @@ import classes from './ButtonPanel.module.scss';
 import RegularButton from "../UI/RegularButton/RegularButton";
 import ScoreLabel from "../ScoreLabel/ScoreLabel";
 import { useTodoRepository } from "../../hooks/useTodoRepository";
+import ITodoItem from "../../models/ITodoItem";
 
 const ButtonPanel = () => {
   const { clearFinished, setFiltered, add} = useTodos();
   const { getTodoList } = useTodoRepository();
-  const [active, setActive] = useState(0);
   const dispatch = useAppDispatch();
+
+  const [todosAmount, setTodosAmount] = useState(Array<ITodoItem>);
+  const handleClick = () => { setTodosAmount(getTodoList()); console.log('test - '+todosAmount.length) };
+
+  const [active, setActive] = useState(0);
   const setCompletedFilter = () => {
     dispatch(updateFilter(FilterType.FINISHED));
     setActive(FilterType.FINISHED);
@@ -31,11 +36,17 @@ const ButtonPanel = () => {
     if (description) {
       add(description, false);
     }
-  }
+  };
+
+  useEffect(() => {
+    handleClick();
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+}, []);
 
   useEffect(() => {
     setFiltered();
-  }, [active])
+  }, [active]);
 
   return (
     <div className={classes.buttonPanel}>
@@ -53,7 +64,7 @@ const ButtonPanel = () => {
           isActive={active === FilterType.ALL}
           dataTestId="getAllTodos"
         />
-        <ScoreLabel score={getTodoList().length} />
+        <ScoreLabel score={todosAmount.length} />
       </div>
       <div className={classes.buttonPanelItem}>
         <RegularButton
@@ -62,7 +73,7 @@ const ButtonPanel = () => {
           isActive={active === FilterType.FINISHED}
           dataTestId="getFinishedTodos"
         />
-        <ScoreLabel score={getTodoList().filter((todo) => todo.checked).length} />
+        <ScoreLabel score={todosAmount.filter((todo) => todo.checked).length} />
       </div>
       <div className={classes.buttonPanelItem}>
         <RegularButton
@@ -71,7 +82,7 @@ const ButtonPanel = () => {
           isActive={active === FilterType.UNFINISHED}
           dataTestId="getUnfinishedTodos"
         />
-        <ScoreLabel score={getTodoList().filter((todo) => !todo.checked).length} />
+        <ScoreLabel score={todosAmount.filter((todo) => !todo.checked).length} />
       </div>
       <div className={classes.bottomButton}>
         <RegularButton
@@ -84,4 +95,4 @@ const ButtonPanel = () => {
   )
 }
 
-export default ButtonPanel
+export default ButtonPanel;

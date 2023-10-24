@@ -19,7 +19,7 @@ const TodoList = () => {
     return (
         <ul className={classes.todoList} data-testid="todoList">
             {todos && todos.map((todo: ITodoItem) =>
-                <li>
+                <li key={todo.id}>
                     <TodoItem key={todo.id} todoItem={todo} />
                 </li>
             )}
