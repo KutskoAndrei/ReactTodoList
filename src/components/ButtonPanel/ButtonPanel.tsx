@@ -15,7 +15,7 @@ const ButtonPanel = () => {
   const dispatch = useAppDispatch();
 
   const [todosAmount, setTodosAmount] = useState(Array<ITodoItem>);
-  const handleClick = () => { setTodosAmount(getTodoList()); console.log('test - '+todosAmount.length) };
+  const handleClick = () => { setTodosAmount(getTodoList()) };
 
   const [active, setActive] = useState(0);
   const setCompletedFilter = () => {
